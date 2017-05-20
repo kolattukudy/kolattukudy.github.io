@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Build a data model</title><link href="/" rel="alternate"></link><link href="/feeds/all.atom.xml" rel="self"></link><id>/</id><updated>2017-05-19T20:00:00-07:00</updated><entry><title>Titanic data book</title><link href="/titanic-machine-learning.html" rel="alternate"></link><published>2017-05-19T20:00:00-07:00</published><updated>2017-05-19T20:00:00-07:00</updated><author><name>Boney Jose</name></author><id>tag:,2017-05-19:titanic-machine-learning.html</id><summary type="html">&lt;style type="text/css"&gt;/*!
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Build a data model</title><link href="http://kolattukudy.github.io/" rel="alternate"></link><link href="http://kolattukudy.github.io/feeds/all.atom.xml" rel="self"></link><id>http://kolattukudy.github.io/</id><updated>2017-05-19T20:00:00-07:00</updated><entry><title>Titanic data book</title><link href="http://kolattukudy.github.io/titanic-machine-learning.html" rel="alternate"></link><published>2017-05-19T20:00:00-07:00</published><updated>2017-05-19T20:00:00-07:00</updated><author><name>Boney Jose</name></author><id>tag:kolattukudy.github.io,2017-05-19:titanic-machine-learning.html</id><summary type="html">&lt;style type="text/css"&gt;/*!
 *
 * IPython notebook
 *
