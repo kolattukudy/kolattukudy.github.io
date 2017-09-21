@@ -262,6 +262,7 @@ div.cell.selected.jupyter-soft-selected {
   }
 }
 div.inner_cell {
+  min-width: 0;
   /* Old browsers */
   display: -webkit-box;
   -webkit-box-orient: vertical;
@@ -282,11 +283,6 @@ div.inner_cell {
   box-flex: 1;
   /* Modern browsers */
   flex: 1;
-}
-@-moz-document url-prefix() {
-  div.inner_cell {
-    overflow-x: hidden;
-  }
 }
 /* input_area and input_prompt must match in top border and margin for alignment */
 div.input_area {
@@ -1024,8 +1020,10 @@ h6:hover .anchor-link {
 .highlight .mh { color: #666666 } /* Literal.Number.Hex */
 .highlight .mi { color: #666666 } /* Literal.Number.Integer */
 .highlight .mo { color: #666666 } /* Literal.Number.Oct */
+.highlight .sa { color: #BA2121 } /* Literal.String.Affix */
 .highlight .sb { color: #BA2121 } /* Literal.String.Backtick */
 .highlight .sc { color: #BA2121 } /* Literal.String.Char */
+.highlight .dl { color: #BA2121 } /* Literal.String.Delimiter */
 .highlight .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
 .highlight .s2 { color: #BA2121 } /* Literal.String.Double */
 .highlight .se { color: #BB6622; font-weight: bold } /* Literal.String.Escape */
@@ -1036,9 +1034,11 @@ h6:hover .anchor-link {
 .highlight .s1 { color: #BA2121 } /* Literal.String.Single */
 .highlight .ss { color: #19177C } /* Literal.String.Symbol */
 .highlight .bp { color: #008000 } /* Name.Builtin.Pseudo */
+.highlight .fm { color: #0000FF } /* Name.Function.Magic */
 .highlight .vc { color: #19177C } /* Name.Variable.Class */
 .highlight .vg { color: #19177C } /* Name.Variable.Global */
 .highlight .vi { color: #19177C } /* Name.Variable.Instance */
+.highlight .vm { color: #19177C } /* Name.Variable.Magic */
 .highlight .il { color: #666666 } /* Literal.Number.Integer.Long */</style>
 <style type="text/css">
 /* Temporary definitions which will become obsolete with Notebook release 5.0 */
@@ -1123,7 +1123,8 @@ h6:hover .anchor-link {
 </div>
 <div class="output_wrapper">
 <div class="output">
-<div class="output_area"><div class="prompt output_prompt">Out[10]:</div>
+<div class="output_area">
+<div class="prompt output_prompt">Out[10]:</div>
 <div class="output_html rendered_html output_subarea output_execute_result">
 <div>
 <table border="1" class="dataframe">
@@ -1240,7 +1241,8 @@ h6:hover .anchor-link {
 </div>
 <div class="output_wrapper">
 <div class="output">
-<div class="output_area"><div class="prompt output_prompt">Out[11]:</div>
+<div class="output_area">
+<div class="prompt output_prompt">Out[11]:</div>
 <div class="output_text output_subarea output_execute_result">
 <pre>(891, 12)</pre>
 </div>
@@ -1260,7 +1262,8 @@ h6:hover .anchor-link {
 </div>
 <div class="output_wrapper">
 <div class="output">
-<div class="output_area"><div class="prompt output_prompt">Out[12]:</div>
+<div class="output_area">
+<div class="prompt output_prompt">Out[12]:</div>
 <div class="output_html rendered_html output_subarea output_execute_result">
 <div>
 <table border="1" class="dataframe">
@@ -1378,7 +1381,8 @@ h6:hover .anchor-link {
 </div>
 <div class="output_wrapper">
 <div class="output">
-<div class="output_area"><div class="prompt output_prompt">Out[13]:</div>
+<div class="output_area">
+<div class="prompt output_prompt">Out[13]:</div>
 <div class="output_html rendered_html output_subarea output_execute_result">
 <div>
 <table border="1" class="dataframe">
@@ -1513,7 +1517,8 @@ h6:hover .anchor-link {
 </div>
 <div class="output_wrapper">
 <div class="output">
-<div class="output_area"><div class="prompt output_prompt">Out[14]:</div>
+<div class="output_area">
+<div class="prompt output_prompt">Out[14]:</div>
 <div class="output_text output_subarea output_execute_result">
 <pre>female    233
 male      109
@@ -1535,7 +1540,8 @@ Name: Sex, dtype: int64</pre>
 </div>
 <div class="output_wrapper">
 <div class="output">
-<div class="output_area"><div class="prompt output_prompt">Out[15]:</div>
+<div class="output_area">
+<div class="prompt output_prompt">Out[15]:</div>
 <div class="output_text output_subarea output_execute_result">
 <pre>male      468
 female     81
@@ -1570,12 +1576,14 @@ Name: Sex, dtype: int64</pre>
 </div>
 <div class="output_wrapper">
 <div class="output">
-<div class="output_area"><div class="prompt output_prompt">Out[16]:</div>
+<div class="output_area">
+<div class="prompt output_prompt">Out[16]:</div>
 <div class="output_text output_subarea output_execute_result">
 <pre><matplotlib.axes._subplots.axessubplot at 0xaef6128></pre>
 </div>
 </div>
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+<div class="prompt"></div>
 <div class="output_png output_subarea ">
 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAA3EAAAH3CAYAAAAVAtagAAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
 AAALEgAACxIB0t1+/AAAIABJREFUeJzt3W2Q1fV9///XHkABudp1uQgOVhFaTESpwjSstduOa504
@@ -1737,8 +1745,8 @@ ffbZfOtb30pra2tGjx6dr33ta3WeDgCAgSbioDDVarV/ta2zszPnnntuPvzhD+dP//RP88orr9R5
 OgAABpqIg8JUq9UcOHAgSfLMM8/ktNNOe9P3AAAY3JzYBApz9tln52/+5m8yduzYHHPMMTn11FOT
 JK+88kpGjx5d5+kAABhoTmwCBfqf//mfvPrqqzn99NMzcuTIJMnmzZuze/fut1w/DgCAwUXEAQAA
 FMQxcQAAAAURcQAAAAURcQAAAAURcQAAAAURcQAAAAX5/wAwJM4cJKPLzwAAAABJRU5ErkJggg==
-">
-</img></div>
+" />
+</div>
 </div>
 </div>
 </div>
@@ -1769,12 +1777,14 @@ FMQxcQAAAAURcQAAAAURcQAAAAURcQAAAAURcQAAAAX5/wAwJM4cJKPLzwAAAABJRU5ErkJggg==
 </div>
 <div class="output_wrapper">
 <div class="output">
-<div class="output_area"><div class="prompt output_prompt">Out[17]:</div>
+<div class="output_area">
+<div class="prompt output_prompt">Out[17]:</div>
 <div class="output_text output_subarea output_execute_result">
 <pre><matplotlib.legend.legend at 0xb6f65f8></pre>
 </div>
 </div>
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+<div class="prompt"></div>
 <div class="output_png output_subarea ">
 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAA4IAAAHmCAYAAAAm8zAEAAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
 AAALEgAACxIB0t1+/AAAIABJREFUeJzt3XuUVeWZJ+BfFQUCIlAXEAtQm4AxxlsUvBAVE0rbNsYw
@@ -2016,8 +2026,8 @@ U5Lk4IMPzv/8n/8zixcv7l4g5vnnn0///v0zatSoqnweAPg99wgCwDtYtGhRPvaxj6WpqSlDhw7t
 urqybNmy/N//+39zyCGHVLssAHhX7hEEgPdow4YNmTt3btrb2zNkyJCccMIJmTBhQrXLAoB3ZWoo
 AABAwZgaCgAAUDCCIAAAQMEIggAAAAUjCAIAABSMIAgAAFAw/w8uBntjWSfXNwAAAABJRU5ErkJg
 gg==
-">
-</img></div>
+" />
+</div>
 </div>
 </div>
 </div>
@@ -2039,12 +2049,14 @@ gg==
 </div>
 <div class="output_wrapper">
 <div class="output">
-<div class="output_area"><div class="prompt output_prompt">Out[18]:</div>
+<div class="output_area">
+<div class="prompt output_prompt">Out[18]:</div>
 <div class="output_text output_subarea output_execute_result">
 <pre><matplotlib.legend.legend at 0xbd95898></pre>
 </div>
 </div>
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+<div class="prompt"></div>
 <div class="output_png output_subarea ">
 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAA4IAAAHmCAYAAAAm8zAEAAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
 AAALEgAACxIB0t1+/AAAIABJREFUeJzt3XuUVeWZJ+BfHYqLgEAVBSKI2gZoY4tBBS+0BhPQse3E
@@ -2276,8 +2288,8 @@ y5YtaWxszIEHHpht27blm9/85mt+vlQq5a1vfWu+9rWvZcOGDSmXy2ltbc3DDz9cp4oB4OUEQQDY
 DW95y1vS1NSUD37wg/nbv/3bjBs37o/u8973vjfDhg3LZZddlhkzZuSaa67J2rVr61AtALyyhrIb
 FQAAAArFiCAAAEDBCIIAAAAFIwgCAAAUjCAIAABQMIIgAABAwQiCAAAABSMIAgAAFIwgCAAAUDD/
 H66naO0LdGMOAAAAAElFTkSuQmCC
-">
-</img></div>
+" />
+</div>
 </div>
 </div>
 </div>
@@ -2300,12 +2312,14 @@ H66naO0LdGMOAAAAAElFTkSuQmCC
 </div>
 <div class="output_wrapper">
 <div class="output">
-<div class="output_area"><div class="prompt output_prompt">Out[19]:</div>
+<div class="output_area">
+<div class="prompt output_prompt">Out[19]:</div>
 <div class="output_text output_subarea output_execute_result">
 <pre><matplotlib.legend.legend at 0xc3b7ef0></pre>
 </div>
 </div>
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+<div class="prompt"></div>
 <div class="output_png output_subarea ">
 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAA4IAAAHmCAYAAAAm8zAEAAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
 AAALEgAACxIB0t1+/AAAIABJREFUeJzs3X90VOWB//HPTCZMgCRkwkApVKgYKkWDuMJaEEERHfWo
@@ -2841,8 +2855,8 @@ oivw1ltvob6+Hk888USkm0IQBEEQrUI7ggRBEATRTi5evIjKykr4fD6cPn0an3zyCUaMGBHpZhEE
 QRBEm5CPIEEQBEG0E5vNhjVr1sBisSApKQlTp05FXl5epJtFEARBEG1CpqEEQRAEQRAEQRBRBpmG
 EgRBEARBEARBRBmkCBIEQRAEQRAEQUQZpAgSBEEQBEEQBEFEGaQIEgRBEARBEARBRBmkCBIEQRAE
 QRAEQUQZ/weldsvbzUNpLAAAAABJRU5ErkJggg==
-">
-</img></div>
+" />
+</div>
 </div>
 </div>
 </div>
@@ -2861,12 +2875,14 @@ QRAEQUQZ/weldsvbzUNpLAAAAABJRU5ErkJggg==
 </div>
 <div class="output_wrapper">
 <div class="output">
-<div class="output_area"><div class="prompt output_prompt">Out[20]:</div>
+<div class="output_area">
+<div class="prompt output_prompt">Out[20]:</div>
 <div class="output_text output_subarea output_execute_result">
 <pre><matplotlib.axes._subplots.axessubplot at 0xc2dcda0></pre>
 </div>
 </div>
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+<div class="prompt"></div>
 <div class="output_png output_subarea ">
 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAA3sAAAHjCAYAAACaZwbkAAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
 AAALEgAACxIB0t1+/AAAIABJREFUeJzt3XtwX3Wd//HXNw0Q29IkTWI15VJrdbkVWGmLIhAvYZ3p
@@ -3041,8 +3057,8 @@ SiX33ntvfvrTn2ZkZCSHHHJIDjrooNTV+d8vAJPPmT0ADnh/8zd/k8985jNZsWJFRkZGcuyxx+7y
 vb3DDjssr33ta3PxxRenrq4up59+ev7gD/5g/P2f/exn+cxnPpNf//rXaWpqyjnnnJM5c+Zk8+bN
 +exnP5uHHnooBx98cE444YSceeaZtf4TATgAVcZ+e/0JAAAAxXAdCQAAQIHEHgAAQIHEHgAAQIHE
 HgAAQIHEHgAAQIHEHgAAQIHEHgAAQIHEHgAAQIHEHgAAQIH+H/egfndc169CAAAAAElFTkSuQmCC
-">
-</img></div>
+" />
+</div>
 </div>
 </div>
 </div>
@@ -3063,12 +3079,14 @@ HgAAQIHEHgAAQIHEHgAAQIHEHgAAQIHEHgAAQIHEHgAAQIH+H/egfndc169CAAAAAElFTkSuQmCC
 </div>
 <div class="output_wrapper">
 <div class="output">
-<div class="output_area"><div class="prompt output_prompt">Out[21]:</div>
+<div class="output_area">
+<div class="prompt output_prompt">Out[21]:</div>
 <div class="output_text output_subarea output_execute_result">
 <pre><matplotlib.axes._subplots.axessubplot at 0xc51ee80></pre>
 </div>
 </div>
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+<div class="prompt"></div>
 <div class="output_png output_subarea ">
 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAA3EAAAH3CAYAAAAVAtagAAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
 AAALEgAACxIB0t1+/AAAIABJREFUeJzt3XuQ3XV9//HXObshCeS2SxJiYiiExKIlmMFkahZw22Ht
@@ -3223,8 +3241,8 @@ PXt2Zs2alSR55JFH8sQTT2TOnDn5wAc+kGnTpjV4QgAAxlK10QMAr8+dd96Z5uYfLqI/88wz+fu/
 OChMrVbL0aNHkyTf+ta3ct55573iMQAAxjcnNoHCXHjhhbnpppsyffr0nHLKKXnrW9+aJHn++edz
 6qmnNng6AADGmhObQIGee+657Nu3L+eff36mTJmSJOnv78/Bgwd/7PpxAACMLyIOAACgII6JAwAA
 KIiIAwAAKIiIAwAAKIiIAwAAKIiIAwAAKMj/BQqpF+qoBuWLAAAAAElFTkSuQmCC
-">
-</img></div>
+" />
+</div>
 </div>
 </div>
 </div>
@@ -3293,7 +3311,8 @@ KIiIAwAAKIiIAwAAKIiIAwAAKIiIAwAAKMj/BQqpF+qoBuWLAAAAAElFTkSuQmCC
 </div>
 <div class="output_wrapper">
 <div class="output">
-<div class="output_area"><div class="prompt output_prompt">Out[25]:</div>
+<div class="output_area">
+<div class="prompt output_prompt">Out[25]:</div>
 <div class="output_text output_subarea output_execute_result">
 <pre>(1309, 11)</pre>
 </div>
@@ -3313,7 +3332,8 @@ KIiIAwAAKIiIAwAAKIiIAwAAKIiIAwAAKMj/BQqpF+qoBuWLAAAAAElFTkSuQmCC
 </div>
 <div class="output_wrapper">
 <div class="output">
-<div class="output_area"><div class="prompt output_prompt">Out[26]:</div>
+<div class="output_area">
+<div class="prompt output_prompt">Out[26]:</div>
 <div class="output_html rendered_html output_subarea output_execute_result">
 <div>
 <table border="1" class="dataframe">
@@ -3465,7 +3485,8 @@ KIiIAwAAKIiIAwAAKIiIAwAAKIiIAwAAKMj/BQqpF+qoBuWLAAAAAElFTkSuQmCC
 </div>
 <div class="output_wrapper">
 <div class="output">
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+<div class="prompt"></div>
 <div class="output_subarea output_text output_error">
 <pre>
 
@@ -3499,7 +3520,8 @@ KIiIAwAAKIiIAwAAKIiIAwAAKIiIAwAAKMj/BQqpF+qoBuWLAAAAAElFTkSuQmCC
 </div>
 <div class="output_wrapper">
 <div class="output">
-<div class="output_area"><div class="prompt output_prompt">Out[29]:</div>
+<div class="output_area">
+<div class="prompt output_prompt">Out[29]:</div>
 <div class="output_text output_subarea output_execute_result">
 <pre>'Duff Gordon, Sir. Cosmo Edmund ("Mr Morgan")'</pre>
 </div>
@@ -3519,7 +3541,8 @@ KIiIAwAAKIiIAwAAKIiIAwAAKIiIAwAAKMj/BQqpF+qoBuWLAAAAAElFTkSuQmCC
 </div>
 <div class="output_wrapper">
 <div class="output">
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+<div class="prompt"></div>
 <div class="output_subarea output_text output_error">
 <pre>
 
@@ -3563,7 +3586,8 @@ KIiIAwAAKIiIAwAAKIiIAwAAKIiIAwAAKMj/BQqpF+qoBuWLAAAAAElFTkSuQmCC
 </div>
 <div class="output_wrapper">
 <div class="output">
-<div class="output_area"><div class="prompt output_prompt">Out[32]:</div>
+<div class="output_area">
+<div class="prompt output_prompt">Out[32]:</div>
 <div class="output_html rendered_html output_subarea output_execute_result">
 <div>
 <table border="1" class="dataframe">
@@ -3680,7 +3704,8 @@ KIiIAwAAKIiIAwAAKIiIAwAAKIiIAwAAKMj/BQqpF+qoBuWLAAAAAElFTkSuQmCC
 </div>
 <div class="output_wrapper">
 <div class="output">
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+<div class="prompt"></div>
 <div class="output_subarea output_text output_error">
 <pre>
 <span class="ansi-cyan-intense-fg ansi-bold">  File </span><span class="ansi-green-intense-fg ansi-bold">"<ipython-input-33-7eb8044c604b>"</span><span class="ansi-cyan-intense-fg ansi-bold">, line </span><span class="ansi-green-intense-fg ansi-bold">1</span>
@@ -3705,7 +3730,8 @@ KIiIAwAAKIiIAwAAKIiIAwAAKIiIAwAAKMj/BQqpF+qoBuWLAAAAAElFTkSuQmCC
 </div>
 <div class="output_wrapper">
 <div class="output">
-<div class="output_area"><div class="prompt output_prompt">Out[34]:</div>
+<div class="output_area">
+<div class="prompt output_prompt">Out[34]:</div>
 <div class="output_text output_subarea output_execute_result">
 <pre>1014</pre>
 </div>
@@ -3734,7 +3760,8 @@ KIiIAwAAKIiIAwAAKIiIAwAAKIiIAwAAKMj/BQqpF+qoBuWLAAAAAElFTkSuQmCC
 </div>
 <div class="output_wrapper">
 <div class="output">
-<div class="output_area"><div class="prompt output_prompt">Out[35]:</div>
+<div class="output_area">
+<div class="prompt output_prompt">Out[35]:</div>
 <div class="output_text output_subarea output_execute_result">
 <pre>263</pre>
 </div>
@@ -3769,7 +3796,8 @@ KIiIAwAAKIiIAwAAKIiIAwAAKIiIAwAAKMj/BQqpF+qoBuWLAAAAAElFTkSuQmCC
 </div>
 <div class="output_wrapper">
 <div class="output">
-<div class="output_area"><div class="prompt output_prompt">Out[37]:</div>
+<div class="output_area">
+<div class="prompt output_prompt">Out[37]:</div>
 <div class="output_html rendered_html output_subarea output_execute_result">
 <div>
 <table border="1" class="dataframe">
@@ -3960,7 +3988,8 @@ KIiIAwAAKIiIAwAAKIiIAwAAKIiIAwAAKMj/BQqpF+qoBuWLAAAAAElFTkSuQmCC
 </div>
 <div class="output_wrapper">
 <div class="output">
-<div class="output_area"><div class="prompt output_prompt">Out[38]:</div>
+<div class="output_area">
+<div class="prompt output_prompt">Out[38]:</div>
 <div class="output_html rendered_html output_subarea output_execute_result">
 <div>
 <table border="1" class="dataframe">
@@ -4214,13 +4243,15 @@ KIiIAwAAKIiIAwAAKIiIAwAAKIiIAwAAKMj/BQqpF+qoBuWLAAAAAElFTkSuQmCC
 </div>
 <div class="output_wrapper">
 <div class="output">
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+<div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Processing age : ok
 </pre>
 </div>
 </div>
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+<div class="prompt"></div>
 <div class="output_subarea output_stream output_stderr output_text">
 <pre>C:\Users\440311\AppData\Local\Enthought\Canopy\User\lib\site-packages\pandas\core\generic.py:2773: SettingWithCopyWarning: 
 A value is trying to be set on a copy of a slice from a DataFrame.
@@ -4246,7 +4277,8 @@ See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stabl
 </div>
 <div class="output_wrapper">
 <div class="output">
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+<div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre><class &#x27;pandas.core.frame.dataframe&#x27;>
 RangeIndex: 1309 entries, 0 to 1308
@@ -4307,7 +4339,8 @@ memory usage: 122.8+ KB
 </div>
 <div class="output_wrapper">
 <div class="output">
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+<div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Processing names : ok
 </pre>
@@ -4348,7 +4381,8 @@ memory usage: 122.8+ KB
 </div>
 <div class="output_wrapper">
 <div class="output">
-<div class="output_area"><div class="prompt output_prompt">Out[44]:</div>
+<div class="output_area">
+<div class="prompt output_prompt">Out[44]:</div>
 <div class="output_html rendered_html output_subarea output_execute_result">
 <div>
 <table border="1" class="dataframe">
@@ -4507,13 +4541,15 @@ memory usage: 122.8+ KB
 </div>
 <div class="output_wrapper">
 <div class="output">
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+<div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Processing fare : ok
 </pre>
 </div>
 </div>
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+<div class="prompt"></div>
 <div class="output_subarea output_stream output_stderr output_text">
 <pre>C:\Users\440311\AppData\Local\Enthought\Canopy\User\lib\site-packages\pandas\core\generic.py:3295: SettingWithCopyWarning: 
 A value is trying to be set on a copy of a slice from a DataFrame
@@ -4562,7 +4598,8 @@ See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stabl
 </div>
 <div class="output_wrapper">
 <div class="output">
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+<div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Processing embarked : ok
 </pre>
@@ -4611,7 +4648,8 @@ See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stabl
 </div>
 <div class="output_wrapper">
 <div class="output">
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+<div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Processing cabin : ok
 </pre>
@@ -4632,7 +4670,8 @@ See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stabl
 </div>
 <div class="output_wrapper">
 <div class="output">
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+<div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre><class &#x27;pandas.core.frame.dataframe&#x27;>
 RangeIndex: 1309 entries, 0 to 1308
@@ -4683,7 +4722,8 @@ memory usage: 104.9+ KB
 </div>
 <div class="output_wrapper">
 <div class="output">
-<div class="output_area"><div class="prompt output_prompt">Out[52]:</div>
+<div class="output_area">
+<div class="prompt output_prompt">Out[52]:</div>
 <div class="output_html rendered_html output_subarea output_execute_result">
 <div>
 <table border="1" class="dataframe">
@@ -4901,7 +4941,8 @@ memory usage: 104.9+ KB
 </div>
 <div class="output_wrapper">
 <div class="output">
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+<div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Processing sex : ok
 </pre>
@@ -4946,7 +4987,8 @@ memory usage: 104.9+ KB
 </div>
 <div class="output_wrapper">
 <div class="output">
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+<div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Processing pclass : ok
 </pre>
@@ -5002,7 +5044,8 @@ memory usage: 104.9+ KB
 </div>
 <div class="output_wrapper">
 <div class="output">
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+<div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Processing ticket : ok
 </pre>
@@ -5045,7 +5088,8 @@ memory usage: 104.9+ KB
 </div>
 <div class="output_wrapper">
 <div class="output">
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+<div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Processing family : ok
 </pre>
@@ -5066,7 +5110,8 @@ memory usage: 104.9+ KB
 </div>
 <div class="output_wrapper">
 <div class="output">
-<div class="output_area"><div class="prompt output_prompt">Out[61]:</div>
+<div class="output_area">
+<div class="prompt output_prompt">Out[61]:</div>
 <div class="output_text output_subarea output_execute_result">
 <pre>(1309, 68)</pre>
 </div>
@@ -5097,7 +5142,8 @@ memory usage: 104.9+ KB
 </div>
 <div class="output_wrapper">
 <div class="output">
-<div class="output_area"><div class="prompt output_prompt">Out[63]:</div>
+<div class="output_area">
+<div class="prompt output_prompt">Out[63]:</div>
 <div class="output_html rendered_html output_subarea output_execute_result">
 <div>
 <table border="1" class="dataframe">
@@ -5645,12 +5691,14 @@ memory usage: 104.9+ KB
 </div>
 <div class="output_wrapper">
 <div class="output">
-<div class="output_area"><div class="prompt output_prompt">Out[70]:</div>
+<div class="output_area">
+<div class="prompt output_prompt">Out[70]:</div>
 <div class="output_text output_subarea output_execute_result">
 <pre><matplotlib.axes._subplots.axessubplot at 0xe06b128></pre>
 </div>
 </div>
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+<div class="prompt"></div>
 <div class="output_png output_subarea ">
 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAABNsAAARiCAYAAACd0PFsAAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
 AAALEgAACxIB0t1+/AAAIABJREFUeJzs3Xt8lOWd///3HHLgkCHgECCEEMq5CRArEhAQwaluU5rd
@@ -7053,8 +7101,8 @@ zYXRaOT8woPZ8neE8wvP1VYuNmzYgOPHj0v3C1apVEhNTW2xLeCe4wWLbURERERERERERHbCbaRE
 RERERERERER2wmIbERERERERERGRnbDYRkREREREREREZCcsthEREREREREREdkJi21ERERERERE
 RER2wmIbERERERERERGRnbDYRkREREREREREZCcsthEREREREREREdnJ/wCjCeu0M7X55wAAAABJ
 RU5ErkJggg==
-">
-</img></div>
+" />
+</div>
 </div>
 </div>
 </div>
@@ -7073,7 +7121,8 @@ RU5ErkJggg==
 </div>
 <div class="output_wrapper">
 <div class="output">
-<div class="output_area"><div class="prompt output_prompt">Out[71]:</div>
+<div class="output_area">
+<div class="prompt output_prompt">Out[71]:</div>
 <div class="output_text output_subarea output_execute_result">
 <pre>(891L, 14L)</pre>
 </div>
@@ -7094,7 +7143,8 @@ RU5ErkJggg==
 </div>
 <div class="output_wrapper">
 <div class="output">
-<div class="output_area"><div class="prompt output_prompt">Out[72]:</div>
+<div class="output_area">
+<div class="prompt output_prompt">Out[72]:</div>
 <div class="output_text output_subarea output_execute_result">
 <pre>(418L, 14L)</pre>
 </div>
@@ -7156,7 +7206,8 @@ RU5ErkJggg==
 </div>
 <div class="output_wrapper">
 <div class="output">
-<div class="output_area"><div class="prompt output_prompt">Out[74]:</div>
+<div class="output_area">
+<div class="prompt output_prompt">Out[74]:</div>
 <div class="output_text output_subarea output_execute_result">
 <pre>0.82719035161166432</pre>
 </div>
@@ -7191,7 +7242,8 @@ RU5ErkJggg==
 </div>
 <div class="output_wrapper">
 <div class="output">
-<div class="output_area"><div class="prompt output_prompt">Out[78]:</div>
+<div class="output_area">
+<div class="prompt output_prompt">Out[78]:</div>
 <div class="output_html rendered_html output_subarea output_execute_result">
 <div>
 <table border="1" class="dataframe">
@@ -7728,6 +7780,7 @@ RU5ErkJggg==
 </div>
 </div>
 </div>
+
 <script type="text/javascript">if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
     var mathjaxscript = document.createElement('script');
     mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
